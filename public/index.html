@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Grandstander', cursive; font-size: large; }
+      .online { position: absolute; max-height: 40%; overflow: auto; top: 5px; right: 5px; background: white; padding: 10px; margin: 10px; border: 2px solid rgb(30, 139, 79); }
+      .online p { text-align: center; margin-bottom: 10px; }
+      .online ul { list-style-type: none; color: rgb(30, 139, 79); }
+      #formMessage { display: grid; grid-template-columns: 1fr 100px; grid-row: 2/3; background: #000; padding: 5px; width: 100%; text-align: center; }
+      #formMessage input { font-family: 'Grandstander', cursive; font-size: large; border: 0; padding: 10px; }
+      #formMessage button { font-family: 'Grandstander', cursive; font-size: large; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #formName { display: flex; margin: 0 20%; padding: 5px; background: #000; justify-content: center; margin-top: 20%}
+      #formName input { font-family: 'Grandstander', cursive; font-size: large; border: 0; padding: 10px; width: 80%; }
+      #formName button { font-family: 'Grandstander', cursive; font-size: large; width: 20%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      .messagesContainer { display: grid; grid-template-rows: 1fr min-content; height: 100vh;}
+      #messages { grid-row: 0/1; list-style-type: none; margin: 0; padding: 0; overflow: auto; }
+      #messages li { padding: 5px 10px; word-break: break-word; }
+      #messages .myMessage { background: rgb(148, 255, 210);}
+    </style>
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

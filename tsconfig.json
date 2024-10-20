@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "lib": ["ES2015"], // Remueve "DOM" de aquí si está presente
+    "types": ["node"] // Asegúrate de incluir solo los tipos de Node.js si no usas DOM
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
