@@ -30,7 +30,7 @@ function getLastMessages(limit: number): IMessage[] {
     return messageHistory.slice(-limit);  
 }
 
-io.on('connection', (socket) => {
+io.on('connection', (socket: socketIo.Socket) => {
     const user: IUser = {name: `Guest_${socket.id}`};
 
     socket.on('typing', (id) => {

@@ -34,3 +34,7 @@ tsc
 node build/server.js
 ```
 
+## En el navegador
+```
+http://localhost:3000/
+```
