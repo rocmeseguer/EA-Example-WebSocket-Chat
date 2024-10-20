@@ -2,6 +2,8 @@ import express from 'express';
 import socketIo from 'socket.io';
 
 import {IUser} from './models/user';
+import {IMessage} from './models/message';
+
 
 const app = express();
 
@@ -17,7 +19,16 @@ const io = new socketIo.Server(server,  {
     }
 });
 
+// Usuarios conectados
 const usersConnected: { [key: string]: IUser } = {};
+
+// Historial de mensajes
+let messageHistory: IMessage[] = [];
+
+// Función para obtener los últimos N mensajes
+function getLastMessages(limit: number): IMessage[] {
+    return messageHistory.slice(-limit);  
+}
 
 io.on('connection', (socket) => {
     const user: IUser = {name: `Guest_${socket.id}`};
@@ -40,7 +51,10 @@ io.on('connection', (socket) => {
 
     socket.on('message', (message) => {
         if(message){
-            socket.broadcast.emit('newMessage', {name: user.name, message});
+            const newMessage: IMessage = {name: user.name, message: message}
+            messageHistory.push(newMessage);
+
+            socket.broadcast.emit('newMessage', newMessage);
         }
     });
 

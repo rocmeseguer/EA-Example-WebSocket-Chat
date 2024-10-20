@@ -108,11 +108,11 @@ socket.on('newMessage', ({name, message}) => {
 });
 
 socket.on('someoneConnected', (name) => {
-    addMessage(`${name} conectou.`);
+    addMessage(`${name} connected.`);
 })
 
 socket.on('someoneDisconnect', (name) => {
-    addMessage(`${name} desconectou.`);
+    addMessage(`${name} desconnected.`);
 });
 
 socket.on('connectedsUpdate', (usersConnected) => {

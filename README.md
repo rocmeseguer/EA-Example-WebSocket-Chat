@@ -17,10 +17,8 @@ Based on https://github.com/Oosasukel/Real-Time-Chat-Socket.io
 ├── src
 │   ├── models
 │   └── server.ts
-├── build
 ├── package.json    
 ├── tsconfig.json   
-├── node_modules
 ├── .gitignore
 └── README.md
 
