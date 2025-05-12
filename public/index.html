@@ -19,9 +19,24 @@
       #messages { grid-row: 0/1; list-style-type: none; margin: 0; padding: 0; overflow: auto; }
       #messages li { padding: 5px 10px; word-break: break-word; }
       #messages .myMessage { background: rgb(148, 255, 210);}
+      #messages .error-message { background: rgb(255, 148, 148); color: rgb(139, 0, 0); }
+      #messages .system-message { background: rgb(255, 243, 148); color: rgb(139, 101, 0); }
+      #connection-status {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        text-align: center;
+        background: rgb(255, 148, 148);
+        color: rgb(139, 0, 0);
+        display: none;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body>
+    <div id="connection-status">Disconnected - Attempting to reconnect...</div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/main.js" type="module"></script>
   </body>
