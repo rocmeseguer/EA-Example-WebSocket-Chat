@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "CommonJS",
-    "outDir": "./build",
-    "rootDir": "./src",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strict": true,
     "esModuleInterop": true,
-    "strictPropertyInitialization": false,
-    "lib": ["ES2015"], // Remueve "DOM" de aquí si está presente
-    "types": ["node"] // Asegúrate de incluir solo los tipos de Node.js si no usas DOM
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "public"]
 }

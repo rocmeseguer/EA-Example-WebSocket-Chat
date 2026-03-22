@@ -1,17 +1,25 @@
 {
   "name": "ea-example-socketio-chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple Socket.IO chat application",
+  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node build/server.js",
-    "build": "tsc"
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js",
+    "build": "tsc",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "pino": "^10.3.1",
+    "pino-pretty": "^13.1.3",
     "socket.io": "^4.8.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
-    "typescript": "^4.0.2"
+    "@types/node": "^20.0.0",
+    "@types/pino": "^7.0.4",
+    "typescript": "^5.0.0"
   }
 }
