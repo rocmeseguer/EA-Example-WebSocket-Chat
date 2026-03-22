@@ -9,32 +9,32 @@ Based on https://github.com/Oosasukel/Real-Time-Chat-Socket.io
 - **TypeScript**: A free and open-source high-level programming language that adds static typing to JavaScript.
 - **Express.js**: A fast and minimalist web application framework for Node.js.
 - **HTML/CSS**: The standard markup language and styling for building the user interface.
-- **Git**: A version control system for tracking changes in the project.
 
-## Estructura del proyecto
+## State management: simple reducer pattern
 
-```
-├── src
-│   ├── models
-│   └── server.ts
-├── package.json    
-├── tsconfig.json   
-├── .gitignore
-└── README.md
+The server maintains the chat state using a simple reducer pattern. The state includes connected users and message history. Actions are dispatched to update the state based on user interactions, such as sending messages or changing names.
 
 ```
-## Instalar todas las dependencias
+    const createReducer: () => (state: ChatState, action: ChatAction) => ChatState
+```
+```
+    const dispatch = (action: ChatAction) => {
+        state = reducer(state, action);
+    };
+```
+
+## Installation
 ```
 npm install
 ```
 
-## Ejecutar
+## Execution
 ```
 tsc
-node build/server.js
+node dist/server.js
 ```
 
-## En el navegador
+## In the browser
 ```
 http://localhost:3000/
 ```
